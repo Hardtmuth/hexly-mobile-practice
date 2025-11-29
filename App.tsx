@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Button } from './shared/button/Button';
+import { Colors } from './shared/tokens';
 
 export default function App() {
   return (
@@ -12,7 +13,9 @@ export default function App() {
         />
       <View style={styles.loginBlock}>
         <Text style={styles.welcomeText}>Welcome to Classroom</Text>
-        <Text style={styles.descriptionText}>Join over 10.000 learners over the World and enjoy online education!</Text>
+        <Text style={styles.descriptionText}>
+          Join over 10.000 learners over the World and enjoy online education!
+        </Text>
         <Button title="Create an account"/>
         <View style={styles.textBlock}>
           <Text style={styles.loginText}>Alredy have an account?</Text>
@@ -25,7 +28,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   content: {
-    backgroundColor: "#6400CD",
+    backgroundColor: Colors.backColor,
     alignItems: "center",
     justifyContent: "flex-end",
     flex: 1,
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontStyle: 'normal',
     textAlign: 'center',
-    color: '#FFFFFF'
+    color: Colors.textColor,
   },
   descriptionText: {
     marginVertical: 10,
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontStyle: 'normal',
     textAlign: 'center',
-    color: '#FFFFFF'
+    color: Colors.textColor,
   },
   backgroundImage: {
     position: 'absolute',
@@ -71,6 +74,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontStyle: 'normal',
     textAlign: 'center',
-    color: '#FFFFFF'
+    color: Colors.textColor,
   },
 });
