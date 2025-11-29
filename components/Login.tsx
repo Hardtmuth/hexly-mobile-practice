@@ -22,7 +22,7 @@ export default function Login() {
         </View>
         <View>
           <Text style={styles.baseText}>Password</Text>
-          <Input placeholder='Enter password'/>
+          <Input isPass placeholder='Enter password'/>
         </View>
         <VioletButton title='Log in'/>
         <Text style={styles.forgotText}>Forgot password?</Text>
