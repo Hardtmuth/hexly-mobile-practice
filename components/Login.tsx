@@ -1,10 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, ToastAndroid } from 'react-native';
 import { VioletButton } from '../shared/button/VioletButton'
 import { Input } from '../shared/input/Input'
 import { Colors } from '../shared/tokens'
 
 export default function Login() {
+  /* const alert = () => {
+    Alert.alert(
+      'Oops!',
+      'Email or password incorrect tro another one.',
+      [
+        {text: 'yes', onPress: () => {}, style: 'cancel'},
+        {text: 'no', onPress: () => {}, style: 'cancel'},
+      ]
+    )
+  } */
+
+  const alert = () => {
+    ToastAndroid.showWithGravity(
+      'Oops! Email or password incorrect tro another one.',
+      ToastAndroid.SHORT,
+      ToastAndroid.TOP,
+    )
+  }
+
   return (
     <View style={styles.content}>
       <View style={styles.header}>
@@ -24,7 +43,7 @@ export default function Login() {
           <Text style={styles.baseText}>Password</Text>
           <Input isPass placeholder='Enter password'/>
         </View>
-        <VioletButton title='Log in'/>
+        <VioletButton title='Log in' onPress={alert}/>
         <Text style={styles.forgotText}>Forgot password?</Text>
       </View>
       <View style={styles.footer}>

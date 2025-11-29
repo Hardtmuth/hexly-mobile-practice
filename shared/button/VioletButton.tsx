@@ -4,15 +4,42 @@ import {
   PressableProps,
   View,
   Text,
+  Animated
 } from "react-native";
 import { Colors } from '../tokens';
 
 export function VioletButton({title, ...props}: PressableProps & {title: string}) {
+  const animVal = new Animated.Value(100)
+  const LoginButtonColor = animVal.interpolate({
+    inputRange: [0, 100],
+    outputRange: [Colors.violetButtonColor, Colors.activeVioletButtonColor]
+  })
+
+  const buttonActive = () => {
+    Animated.timing(animVal, {
+      toValue: 100,
+      duration: 50,
+      useNativeDriver: true,
+    }).start()
+  }
+
+  const buttonNoActive = () => {
+    Animated.timing(animVal, {
+      toValue: 0,
+      duration: 50,
+      useNativeDriver: true,
+    }).start()
+  }
+
   return (
-    <Pressable {...props}>
-      <View style={styles.button}>
+    <Pressable
+      {...props}
+      onPressIn={buttonActive}
+      onPressOut={buttonNoActive}
+    >
+      <Animated.View style={{...styles.button, backgroundColor: LoginButtonColor}}>
         <Text style={styles.title}>{title}</Text>
-      </View>
+      </Animated.View>
     </Pressable>
   )
 }
@@ -22,7 +49,6 @@ const styles = StyleSheet.create({
     width: 343,
     height: 60,
     borderRadius: 12,
-    backgroundColor: '#B88AE8',
     alignItems: "center",
     justifyContent: "center",
   },
