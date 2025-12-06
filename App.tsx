@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Button } from './shared/button/Button';
 import { Colors } from './shared/tokens';
@@ -6,31 +5,31 @@ import { Colors } from './shared/tokens';
 export default function App() {
   return (
     <View style={styles.content}>
-      <Image 
-          source={require("./assets/background.png")}
-          resizeMode='cover'
-          style={styles.backgroundImage}
-        />
+      <Image
+        source={require('./assets/background.png')}
+        resizeMode="cover"
+        style={styles.backgroundImage}
+      />
       <View style={styles.loginBlock}>
         <Text style={styles.welcomeText}>Welcome to Classroom</Text>
         <Text style={styles.descriptionText}>
           Join over 10.000 learners over the World and enjoy online education!
         </Text>
-        <Button title="Create an account"/>
+        <Button title="Create an account" />
         <View style={styles.textBlock}>
           <Text style={styles.loginText}>Alredy have an account?</Text>
           <Text style={styles.loginText}>Log in</Text>
         </View>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   content: {
     backgroundColor: Colors.backColor,
-    alignItems: "center",
-    justifyContent: "flex-end",
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     flex: 1,
   },
   loginBlock: {
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     position: 'absolute',
     height: '100%',
-    width: '100%'
+    width: '100%',
   },
   textBlock: {
     flexDirection: 'row',

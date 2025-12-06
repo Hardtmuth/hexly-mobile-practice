@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Alert, ToastAndroid } from 'react-native';
-import { VioletButton } from '../shared/button/VioletButton'
-import { Input } from '../shared/input/Input'
-import { Colors } from '../shared/tokens'
+import { StyleSheet, Text, View, Image, ToastAndroid } from 'react-native';
+import { VioletButton } from '../shared/button/VioletButton';
+import { Input } from '../shared/input/Input';
+import { Colors } from '../shared/tokens';
 
 export default function Login() {
   /* const alert = () => {
@@ -21,40 +20,35 @@ export default function Login() {
       'Oops! Email or password incorrect tro another one.',
       ToastAndroid.SHORT,
       ToastAndroid.TOP,
-    )
-  }
+    );
+  };
 
   return (
     <View style={styles.content}>
       <View style={styles.header}>
         {/*Arrow button and header */}
-        <Image
-          source={require('../assets/arrow_back.png')}
-          style={styles.imageStyle}
-        />
+        <Image source={require('../assets/arrow_back.png')} style={styles.imageStyle} />
         <Text style={styles.loginText}>Log into account</Text>
       </View>
       <View style={styles.body}>
         <View>
           <Text style={styles.baseText}>Email</Text>
-          <Input placeholder='example@example.com'/>
+          <Input placeholder="example@example.com" />
         </View>
         <View>
           <Text style={styles.baseText}>Password</Text>
-          <Input isPass placeholder='Enter password'/>
+          <Input isPass placeholder="Enter password" />
         </View>
-        <VioletButton title='Log in' onPress={alert}/>
+        <VioletButton title="Log in" onPress={alert} />
         <Text style={styles.forgotText}>Forgot password?</Text>
       </View>
       <View style={styles.footer}>
-          <Text style={styles.footerText}>
-            By using Classroom,
-            you agree to The Terms and Privacy Policy.
-            Terms and Privacy Policy.
-          </Text>
-        </View>
+        <Text style={styles.footerText}>
+          By using Classroom, you agree to The Terms and Privacy Policy. Terms and Privacy Policy.
+        </Text>
+      </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -85,11 +79,11 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontStyle: 'normal',
     textAlign: 'center',
-    color: '#000000'
+    color: '#000000',
   },
   body: {
     gap: 16,
-    flexGrow: 1
+    flexGrow: 1,
   },
   baseText: {
     width: 343,
@@ -98,7 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '400',
     fontStyle: 'normal',
-    color: '#121A2C'
+    color: '#121A2C',
   },
   forgotText: {
     width: 343,
@@ -120,4 +114,4 @@ const styles = StyleSheet.create({
     width: 375,
     height: 94,
   },
-})
+});

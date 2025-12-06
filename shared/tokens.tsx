@@ -5,4 +5,4 @@ export const Colors = {
   lightBackColor: '#F7F0F0FF',
   violetButtonColor: '#B88AE8',
   activeVioletButtonColor: '#ee61dbff',
-}
+};

@@ -1,12 +1,6 @@
-import {
-  StyleSheet,
-  Pressable,
-  PressableProps,
-  View,
-  Text,
-} from "react-native";
+import { StyleSheet, Pressable, PressableProps, View, Text } from 'react-native';
 
-export function Button({title,...props}: PressableProps & { title: string }) {
+export function Button({ title, ...props }: PressableProps & { title: string }) {
   return (
     <Pressable {...props}>
       <View style={styles.button}>
@@ -21,17 +15,17 @@ const styles = StyleSheet.create({
     width: 343,
     height: 60,
     borderRadius: 12,
-    backgroundColor: "#FFFFFF",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     width: 131,
     height: 26,
-    fontFamily: "Roboto",
+    fontFamily: 'Roboto',
     fontSize: 16,
-    fontWeight: "600",
-    fontStyle: "normal",
-    color: "#27252E",
+    fontWeight: '600',
+    fontStyle: 'normal',
+    color: '#27252E',
   },
 });
